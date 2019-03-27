@@ -106,7 +106,7 @@
 - (void)toHFileString:(NSDictionary *)dict key:(NSString *)key className:(NSString *)className {
     __block NSString *log = @"";
     if (![key isEqualToString:className]) {
-        log = [@"\n\n" stringByAppendingString:[NSString stringWithFormat:@"@interface %@_%@_Item : NSObject\n", className, key]];
+        log = [log stringByAppendingString:[NSString stringWithFormat:@"@interface %@_%@_Item : NSObject\n", className, key]];
     }else {
         log = [NSString stringWithFormat:@"@interface %@_Item : NSObject\n", key];
     }
