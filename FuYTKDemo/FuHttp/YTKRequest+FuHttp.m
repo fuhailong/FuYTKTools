@@ -110,23 +110,7 @@ static NSString *requestTypeKey     = @"REQUEST_TYPE_KEY";
 }
 
 - (nullable NSDictionary<NSString *, NSString *> *)requestHeaderFieldValueDictionary {
-//    NSString *clientID = [HZHttpItem getClientID];
-//    NSString *shumeng_id = [AppDelegate shareAppDelegate].shumeng_id;
-    
-    NSMutableDictionary *mutDict = [NSMutableDictionary dictionaryWithDictionary:@{
-//                                                                                   @"Php-Ios-Client-Id":@"Php-Ios-Client-Id",
-                                                                                   @"Php-Auth-User":@"mmzapp_ios",
-                                                                                   @"Php-Auth-Pw":@"b29b3e141b99e40e2e3153e1a5a2721d",
-//                                                                                   @"Mmz-Ios-Version":APP_VERSION,
-                                                                                   @"App-From":@"ios",
-//                                                                                   @"Shu-Meng-Did":IS_NOT_EMPTY(shumeng_id)?shumeng_id:@""
-                                                                                   }
-                                    ];
-//    NSString *accessToken = [HZUserInfo getAccessToken];
-//    if (IS_NOT_EMPTY(accessToken)) {
-//        [mutDict setObject:accessToken forKey:@"Php-Auth-Access-Token"];
-//    }
-    return mutDict;
+    return @{};
 }
 
 @end

@@ -31,8 +31,8 @@
         for (FuHttpType type = FU_HTTP_BEGIN + 1; type < FU_HTTP_END; type++) {
             FuHttpInfo *info = nil;
             //-------------------------------------------------
-            HTTP_INFO(@"mmztemplate/getStandardUrl", TEST_POST);
-            HTTP_INFO(@"mmzindex/activityList", TEST_GET);
+            HTTP_INFO(@"", TEST_POST);
+            HTTP_INFO(@"", TEST_GET);
             
             //-------------------------------------------------
             

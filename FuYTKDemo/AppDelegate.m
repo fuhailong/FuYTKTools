@@ -27,7 +27,7 @@
     config.securityPolicy.validatesDomainName = NO;
     config.securityPolicy.pinnedCertificates = [NSSet setWithObject:certData];
      */
-    config.baseUrl = @"https://www.henzanapp.com/api/v2/";
+    config.baseUrl = @"";
     
     return YES;
 }
