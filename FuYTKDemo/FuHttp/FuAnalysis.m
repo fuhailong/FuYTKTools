@@ -49,10 +49,12 @@
         return [class modelWithDictionary:responseObject];
     }else {
 #ifdef DEBUG
-        NSDictionary *dict = (NSDictionary *)responseObject;
-        [self printClassAllProperty:dict key:className];
+        //打印数据模型内容
+//        NSDictionary *dict = (NSDictionary *)responseObject;
+//        [self printClassAllProperty:dict key:className];
+//        return nil;
 #endif
-        return nil;
+        return responseObject;
     }
 }
 
@@ -111,10 +113,10 @@
         log = [NSString stringWithFormat:@"@interface %@_Item : NSObject\n", key];
     }
     
-    //当前对象中是字典或数组的集合
-    __block NSMutableArray *mutArray = [NSMutableArray array];
     //遍历所有key
     NSArray *keys = dict.allKeys;
+    //当前对象中是字典或数组的集合
+    __block NSMutableArray *mutArray = [NSMutableArray arrayWithCapacity:keys.count];
     [keys enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *oneKey = (NSString *)obj;
         id value = dict[oneKey];
@@ -174,12 +176,13 @@
     }
     
     //当前对象中是字典或数组的集合
-    __block NSMutableArray *mutArray = [NSMutableArray array];
+    __block NSMutableArray *mutArray = nil;
     
     if ([object isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dict = (NSDictionary *)object;
         //遍历所有key
         NSArray *keys = dict.allKeys;
+        mutArray = [NSMutableArray arrayWithCapacity:keys.count];
         [keys enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSString *oneKey = (NSString *)obj;
             id value = dict[oneKey];
